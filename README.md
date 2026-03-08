@@ -196,23 +196,20 @@ An automated PDF report was generated from the Alteryx workflow including:
 ```
 Retail-Revenue-Optimization
 │
-├── data
+├── Data
 │   └── Online Retail.xlsx
 │
-├── workflow
-│   └── revenue_optimization_workflow.yxwz
+├── Workflow
+│   └── Retail Revenue Optimization & Demand Forecasting.yxwz
 │
-├── report
+├── Report
 │   └── retail_pricing_optimization_report.pdf
 │
-├── screenshots
-│   ├── workflow_overview.png
-│   ├── demand_forecast_chart.png
-│   ├── revenue_comparison_chart.png
-│   └── sensitivity_analysis_chart.png
-│
-├── diagrams
-│   └── workflow_architecture.png
+├── Screenshots
+│   ├── Demand_Forecast.png
+│   ├── Elasticity_Analysis.png
+│   ├── Price_Comparison_Charrt.png
+│   └── Revenue_Comparison.png
 │
 └── README.md
 ```
