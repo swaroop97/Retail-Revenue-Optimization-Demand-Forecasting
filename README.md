@@ -197,10 +197,10 @@ An automated PDF report was generated from the Alteryx workflow including:
 Retail-Revenue-Optimization
 │
 ├── data
-│   └── online_retail_dataset.csv
+│   └── Online Retail.xlsx
 │
 ├── workflow
-│   └── revenue_optimization_workflow.yxmd
+│   └── revenue_optimization_workflow.yxwz
 │
 ├── report
 │   └── retail_pricing_optimization_report.pdf
