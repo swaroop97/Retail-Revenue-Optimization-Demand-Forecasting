@@ -1,7 +1,7 @@
 # Retail-Revenue-Optimization-Demand-Forecasting
 This project builds an end-to-end analytics pipeline to forecast retail demand and evaluate dynamic pricing strategies to maximize revenue. Using historical transaction data, the workflow predicts future demand, models price elasticity effects, and quantifies revenue uplift from dynamic pricing compared to static pricing.
 
-# Problem
+## Problem
 Retail businesses must determine pricing strategies that balance **customer demand and profitability**. Static pricing strategies often ignore changes in demand patterns, which can lead to missed revenue opportunities.
 
 This project addresses the following questions:
@@ -14,7 +14,7 @@ This project addresses the following questions:
 
 4) How sensitive is revenue to **price elasticity assumptions**?
 
-# Dataset
+## Dataset
 The analysis uses the **Online Retail dataset**, which contains historical e-commerce transactions including:
 
 1) InvoiceDate
@@ -38,11 +38,11 @@ Dataset characteristics:
 The data was transformed into a **monthly demand time series** to support forecasting.
 
 
-# Methodolgy
+## Methodolgy
 
 The project follows a structured analytics pipeline.
 
-# 1. Data Cleaning
+## 1. Data Cleaning
 Invalid records were removed to ensure data quality.
 
 Filters applied:
@@ -55,7 +55,7 @@ Filters applied:
 
 This removes returns, incorrect prices, and incomplete transactions.
 
-# 2. Feature Engineering
+## 2. Feature Engineering
 New analytical features were created:
 
 - Revenue = Quantity × UnitPrice
@@ -66,7 +66,7 @@ New analytical features were created:
 
 This converts transaction-level data into a **time series demand dataset**.
 
-# 3. Time Series Foreasting
+## 3. Time Series Foreasting
 Demand forecasting was performed using Alteryx time-series tools.
 
 Steps:
@@ -85,7 +85,7 @@ Output:
 
 Visualization includes **historical vs forecast demand trends**.
 
-# 4. Dynamic Pricing Model
+## 4. Dynamic Pricing Model
 A demand-based pricing strategy was implemented using price elasticity.
 
 Price adjustment formula:
@@ -102,22 +102,22 @@ Where:
 
 Price limits were applied to ensure realistic pricing.
 
-# 5. Revenue Optimization
+## 5. Revenue Optimization
 Two pricing strategies were compared:
 
-# Static Pricing
+### Static Pricing
 ```bash
 Revenue = Base Price x Forecast Demand
 ```
 
-# Dynamic Pricing
+### Dynamic Pricing
 ```bash
 Revenue = Optimal Price x Forecast Demand
 ```
 
 Total Revenue was calculated for each scenario.
 
-# 6.Sensitivity Analysis
+## 6.Sensitivity Analysis
 
 Revenue performance was evaluated under different **price elasticity assumptions**.
 
@@ -133,7 +133,7 @@ Elasticity values tested:
 This analysis shows how **demand responsiveness impacts revenue outcomes**.
 
 
-# Results
+## Results
 
 Key findings from the analysis:
 
@@ -146,7 +146,7 @@ Key findings from the analysis:
 
 Sensitivity analysis indicates revenue increases as **price elasticity increases**, highlighting the importance of demand responsiveness in pricing decisions.
 
-# Visulatizations
+## Visualizations
 
 The project includes the following visual outputs:
 
@@ -158,7 +158,7 @@ The project includes the following visual outputs:
 
 These charts help communicate insights clearly for decision-makers.
 
-# Executive Report
+## Executive Report
 
 An automated PDF report was generated from the Alteryx workflow including:
 
@@ -174,7 +174,7 @@ An automated PDF report was generated from the Alteryx workflow including:
 
 - Key Insight
 
-# Tools & Technologies
+## Tools & Technologies
 
 - Alteryx Designer
 
@@ -191,29 +191,33 @@ An automated PDF report was generated from the Alteryx workflow including:
 - Automated PDF Reporting
 
 
-# Project Structure
+## Project Structure
 
 ```
-Retail-Revenue Optimization/
-|
+Retail-Revenue-Optimization
+│
 ├── data
-|   └──online_retail_dataset.csv
-|           
-├── workflow/
-|   └──revenue_optimization_workflow.yxmd
-|
-├── report/
-|   └── retail_revenue_optimization_report.pdf
-|   
-├── screenshots/
-|   └── workflow_overbiew.png
-|   └── demand_forecasst_chart.png
-|   └── elasticity_sensitivity_chart.png
-|
+│   └── online_retail_dataset.csv
+│
+├── workflow
+│   └── revenue_optimization_workflow.yxmd
+│
+├── report
+│   └── retail_pricing_optimization_report.pdf
+│
+├── screenshots
+│   ├── workflow_overview.png
+│   ├── demand_forecast_chart.png
+│   ├── revenue_comparison_chart.png
+│   └── sensitivity_analysis_chart.png
+│
+├── diagrams
+│   └── workflow_architecture.png
+│
 └── README.md
 ```
 
-# Business Impact
+## Business Impact
 
 The analysis demonstrates that dynamic pricing can significantly improve revenue compared to static pricing strategies.
 
@@ -236,3 +240,88 @@ This type of modeling is widely used in:
 - Ride-sharing platforms
 
 - Hospitality pricing systems
+
+
+## Workflow Architecture
+
+### Project Pipeline Overview
+```
+Raw Retail Data
+      │
+      ▼
+Data Cleaning
+(Remove invalid transactions)
+      │
+      ▼
+Feature Engineering
+(Create revenue, month, demand features)
+      │
+      ▼
+Demand Aggregation
+(Monthly demand totals)
+      │
+      ▼
+Time Series Forecasting
+(Forecast next 6 months demand)
+      │
+      ▼
+Forecast Adjustment
+(Clean negative forecasts)
+      │
+      ▼
+Dynamic Pricing Model
+(Elasticity-based price optimization)
+      │
+      ▼
+Revenue Simulation
+Static Pricing vs Dynamic Pricing
+      │
+      ▼
+Sensitivity Analysis
+(Test multiple elasticity scenarios)
+      │
+      ▼
+Optimal Scenario Selection
+(Highest revenue outcome)
+      │
+      ▼
+Business Recommendation
+(Optimal elasticity + pricing strategy)
+      │
+      ▼
+Executive Report
+```
+
+This project follows a structured analytics pipeline:
+
+1. **Data Cleaning**
+
+Raw retail transaction data is cleaned by removing invalid records such as negative quantities, zero prices, and missing customer IDs.
+
+2. **Feature Engineering**
+
+Revenue, month, and year features are created. Data is aggregated to monthly demand to form a time series dataset.
+
+3. **Demand Forecasting**
+
+Time series forecasting is applied to estimate demand for the next six months.
+
+4. **Dynamic Pricing Model**
+
+An elasticity-based pricing formula adjusts prices based on forecasted demand relative to historical averages.
+
+5. **Revenue Simulation**
+
+Revenue is calculated under both static pricing and dynamic pricing scenarios.
+
+6. **Sensitivity Analysis**
+
+Multiple elasticity assumptions are tested to evaluate how revenue changes under different demand responsiveness conditions.
+
+7. **Recommendation Engine**
+   
+The elasticity scenario producing the highest projected revenue is selected and translated into a pricing recommendation.
+
+9. **Executive Reporting**
+
+The workflow generates an automated report including executive summary, revenue impact analysis, and business recommendations.
